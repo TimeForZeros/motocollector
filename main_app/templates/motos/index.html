@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Moto List</h1>
+
+{% for moto in motos %}
+  <a href="{% url 'detail' moto.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ moto.make }}</span>
+            <p>model: {{ moto.model }}</p>
+            <p>year: {{ moto.description }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
