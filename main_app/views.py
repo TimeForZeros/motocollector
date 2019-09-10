@@ -9,7 +9,7 @@ class MotoCreate(CreateView):
 
 class MotoUpdate(UpdateView):
   model = Moto
-  fields = ['breed', 'description', 'age']
+  fields = ['make', 'model', 'year']
 
 class MotoDelete(DeleteView):
   model = Moto
