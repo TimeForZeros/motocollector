@@ -1,6 +1,13 @@
 from django.db import models
 
 
+MAINT = (
+    ('O', 'Oil Change'),
+    ('L', 'Lube Chain'),
+    ('T', 'Tire Check')
+
+)
+
 
 # Create your models here.
 class Moto(models.Model):
