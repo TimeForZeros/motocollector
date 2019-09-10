@@ -22,7 +22,7 @@ class Moto(models.Model):
         return reverse('detail', kwargs={'moto_id': self.id})
 
 class Maintenance(models.Model):
-    date = models.DateField('Maintenance Date')
+    date = models.DateField('maintenance date')
     maintenance = models.CharField(
         max_length=1,
         choices=MAINT,
@@ -30,5 +30,9 @@ class Maintenance(models.Model):
         )
     moto = models.ForeignKey(Moto, on_delete=models.CASCADE)
 
-def __str__(self):
-    return f'{self.get_meal_display()} on {self.date}'
+    def __str__(self):
+        return f'{self.get_maint_display()} on {self.date}'
+
+    class Meta:
+        ordering = ['-date']
+
