@@ -13,7 +13,7 @@ MAINT = (
 class Moto(models.Model):
     make = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
-    year = models.IntegerField(max_length=4)
+    year = models.IntegerField()
 
     def __str__(self):
         return self.make
