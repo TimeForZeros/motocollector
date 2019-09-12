@@ -1,5 +1,8 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
+
+from django.contrib.auth.models import User
 
 MAINT = (
     ('O', 'Oil Change'),
@@ -14,6 +17,7 @@ class Moto(models.Model):
     make = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
     year = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.make
