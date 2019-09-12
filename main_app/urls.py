@@ -10,5 +10,6 @@ urlpatterns = [
   path('motos/<int:pk>/update/', views.MotoUpdate.as_view(), name='motos_update'),
   path('motos/<int:pk>/delete/', views.MotoDelete.as_view(), name='motos_delete'),
   path('motos/<int:moto_id>/add_maintenance/', views.add_maintenance, name='add_maintenance'),
-  path('motos/<int:moto_id>/add_photo/', views.add_photo, name='add_photo')
+  path('motos/<int:moto_id>/add_photo/', views.add_photo, name='add_photo'),
+  path('accounts/signup', views.signup, name='signup'),
 ]

@@ -10,9 +10,6 @@ MAINT = (
     ('T', 'Tire Check')
 
 )
-
-
-# Create your models here.
 class Moto(models.Model):
     make = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
