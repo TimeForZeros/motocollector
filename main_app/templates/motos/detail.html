@@ -13,9 +13,9 @@
         <!-- new markup below -->
         <br>
         {% if moto.fed_for_today %}
-          <div class="card-panel teal-text center-align">{{moto.make}} has been fed all meals for today</div>
+          <div class="card-panel teal-text center-align">{{moto.make}} has been maintained recently</div>
         {% else %}
-          <div class="card-panel red-text center-align">{{moto.make}} might be hungry</div>
+          <div class="card-panel red-text center-align">{{moto.make}} might need maintenance</div>
         {% endif %}
     <div class="card">
       <div class="card-content">
@@ -42,7 +42,7 @@
         {% for maintenance in moto.maintenance_set.all %}
           <tr>
             <td>{{maintenance.date}}</td>
-            <td>{{maintenance.get_meal_display}}</td>
+            <td>{{maintenance.maintenance}}</td>
           </tr>
         {% endfor %}
       </tbody>

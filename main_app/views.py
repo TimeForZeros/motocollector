@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import uuid
 import boto3
 
-from .models import Moto, Photo
+from .models import Moto
 from .forms import MaintenanceForm
 
 S3_BASE_URL =  'https://s3-us-west-1.amazonaws.com/'

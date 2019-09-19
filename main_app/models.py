@@ -21,7 +21,8 @@ class Moto(models.Model):
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={'moto_id': self.id})
-
+    def maintained_recently(self):
+        return self.maintenance_set.filter(date=date.today()).count() >= len(MAINT)
 class Maintenance(models.Model):
     date = models.DateField('maintenance date')
     maintenance = models.CharField(
@@ -37,9 +38,3 @@ class Maintenance(models.Model):
     class Meta:
         ordering = ['-date']
 
-class Photo(models.Model):
-    url = models.CharField(max_length=200)
-    moto = models.ForeignKey(Moto, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return f'Photo for moto_id: {self.moto_id} @{self.url}'
